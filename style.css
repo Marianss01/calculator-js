@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #a3a3a2;
+    font-family: "JetBrains Mono", monospace;
+}
+
+/* Calculator */
+.calculator {
+    width: 300px;
+    padding: 9px;
+    background: #1c1e1e;
+    border: 1px solid #454545;
+    border-radius: 29px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+/* Displays */
+.ex-display {
+    height: 50px;
+    text-align: end;
+    font-size: 36px;
+    padding: 4px 8px;
+    color: #a4a5a6;
+}
+
+.res-display {
+    height: 76px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 0 2px;
+    color: #eeeeee;
+    font-size: 48px;
+    font-weight: 300;
+}
+
+/* Keypad */
+.keypad {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.key-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 6px;
+}
+
+/* Buttons */
+.key {
+    width: 60px;
+    aspect-ratio: 1 / 1;
+    flex: 1 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border: none;
+    border-radius: 50%;
+    background: #454747;
+    color: #f5f5f5;
+
+    font-size: 32px;
+    font-weight: 400;
+    cursor: pointer;
+}
+
+.function {
+    background: #858787;
+    color: white;
+}
+
+.operator {
+    background: #ff9500;
+    color: white;
+    font-size: 32px;
+}
+
+/* Hover effects */
+.key:hover {
+    filter: brightness(1.2);
+}
+
+.key:active {
+    filter: brightness(1.5);
+}
