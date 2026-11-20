@@ -17,7 +17,7 @@ body {
 
 /* Calculator */
 .calculator {
-    width: 300px;
+    width: 350px;
     padding: 9px;
     background: #1c1e1e;
     border: 1px solid #454545;
@@ -29,9 +29,10 @@ body {
 .ex-display {
     height: 50px;
     text-align: end;
-    font-size: 36px;
+    font-size: 32px;
     padding: 4px 8px;
     color: #a4a5a6;
+    overflow: hidden;
 }
 
 .res-display {
@@ -43,7 +44,22 @@ body {
     color: #eeeeee;
     font-size: 48px;
     font-weight: 300;
+    overflow: hidden;
 }
+
+.ex-display span,
+.res-display span {
+    display: block;
+    width: 100%;
+    min-width: 0;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.res-display span {
+    text-align: right;
+}
+
 
 /* Keypad */
 .keypad {
@@ -82,7 +98,7 @@ body {
     color: white;
 }
 
-.operator {
+.operator, #equal {
     background: #ff9500;
     color: white;
     font-size: 32px;
