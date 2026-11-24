@@ -1,4 +1,4 @@
-import operate from "./operations.js";
+import operate from "./utils/operations.js";
 
 /* DOM definition */
 const numberKeys = document.querySelectorAll(".number");
@@ -6,6 +6,8 @@ const operatorKeys = document.querySelectorAll(".operator");
 const cancelBtn = document.querySelector("#cancel-btn");
 const deleteBtn = document.querySelector("#delete-btn");
 const percentageBtn = document.querySelector("#percentage");
+const floatBtn = document.querySelector(".point");
+const toggleBtn = document.querySelector(".toggle");
 const equalBtn = document.querySelector("#equal");
 const expDisplay = document.querySelector(".ex-display span");
 const resDisplay = document.querySelector(".res-display span");
@@ -102,6 +104,22 @@ deleteBtn.addEventListener("click", () => {
 percentageBtn.addEventListener("click", () => {
     operands[1] ? operands[1] = operate(operands[1], "÷", 100).toString() :
     operator ? operator : operands[0] = operate(operands[0], "÷", 100).toString();
+    updateDisplay(resDisplay);
+});
+
+floatBtn.addEventListener("click", () => {
+    if (operands[1] && Number.isInteger(parseFloat(operands[1]))) operands[1] += ".";
+    else if (!operands[1] && operator) {}
+    else {
+        if (Number.isInteger(parseFloat(operands[0]))) operands[0] += ".";
+    }
+    updateDisplay(resDisplay);
+});
+
+toggleBtn.addEventListener("click", () => {
+    if (operands[1]) operands[1] = String(-parseFloat(operands[1]));
+    else if (!operands[1] && operator) {/*do nothing*/}
+    else if (operands[0]) operands[0] = String(-parseFloat(operands[0]));
     updateDisplay(resDisplay);
 });
 
